@@ -1,4 +1,5 @@
-'''
+# auto mount disk
+```
 sudo fdisk -l
 
 # find the UUID
@@ -15,8 +16,8 @@ sudo chown -R :data /data
 # automount entry
 sudo vim /etc/fstab
 UUID=14D82C19D82BF81E /data    auto nosuid,nodev,nofail,x-gvfs-show 0 0
-'''
-
+```
+# Breaking that line down, we have:
 UUID=14D82C19D82BF81E - is the UUID of the drive. You don't have to use the UUID here. You could just use /dev/sdj, but it's always safer to use the UUID as that will never change (whereas the device name could).
 /data - is the mount point for the device.
 auto - automatically mounts the partition at boot 
@@ -27,8 +28,8 @@ x-gvfs-show - show the mount option in the file manager. If this is on a GUI-les
 0 - determines which filesystems need to be dumped (0 is the default).
 0 - determine the order in which filesystem checks are done at boot time (0 is the default).
 
-'''
+```
 # testing the entry 
 sudo mount -a
 # if you see no errors, the fstab entry is correct and you're safe to reboot
-'''
+```
