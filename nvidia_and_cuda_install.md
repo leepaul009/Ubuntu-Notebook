@@ -7,7 +7,7 @@ Menu:
 4. Ubuntu login with black screen (Bug fix)
 ...
 ```
-## 1. Preprocessing
+## 1. Preprocessing (nvidia driver&cuda install)
 ### 1.1 Uninstall nvidia and cuda if installed with .deb files and "apt install"
 ```
 $sudo apt purge nvidia*
@@ -29,7 +29,7 @@ $sudo update-initramfs -u
 # Reboot and check with the following cmd:
 $lsmod |grep nouveau
 ```
-## 2. Installation
+## 2. Installation (nvidia driver&cuda install)
 ### 2.1 Install nvidia driver
 ```
 sudo chmod +x NVIDIA-Linux-x86_64-440.36.run
@@ -59,9 +59,10 @@ if [ -d "/usr/local/cuda-10.1/bin/" ]; then
     export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 fi
 ```
-
-## 3. Ubuntu login loop
+__________________________________________________________________________
+## 3. Ubuntu login loop (Bug fix)
 ### 3.1 solution for ubuntu 18.04 (not sure if it's available for ubuntu20)
+#### Refer to https://forums.developer.nvidia.com/t/ubuntu-18-04-login-loop-after-installing-nvidia-driver/81280
 ```
 $sudo prime-select nvidia
 
@@ -102,4 +103,15 @@ $sudo vim /etc/X11/xorg.conf
 # 1. Purge all nvidia driver packages so the internal Aspeed graphics works again
 # 2. Download the .run installer driver https://http.download.nvidia.com/XFree86/Linux-x86_64/
 # 3. Install nvidia dirvier with options, "--dkms --no-opengl-files"
+```
+__________________________________________________________________________
+## 4. Ubuntu login with black screen (Bug fix)
+### or named "Ubuntu Freezing at Boot Screen"
+### 4.1 Print 'e' in ubuntu advance option.
+### 4.2 Add 'nomodeset' at the line that starts with 'Linux', ex. 'quiet splash $vt_handoff nomodeset'.
+### 4.3 Update grub file for permanet change in grub:
+```
+# Add “nogpumanager” kernal boot parameter, GRUB_CMDLINE_LINUX_DEFAULT=“nogpumanager quiet splash”
+$sudo vim /etc/default/grub
+$sudo update-grub
 ```
