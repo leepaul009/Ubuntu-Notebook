@@ -34,14 +34,25 @@ sudo service lightdm stop
 # sudo ./NVIDIA-Linux-x86_64-440.36.run --dkms  -no-x-check -no-nouveau-check -no-opengl-files
 sudo ./NVIDIA-Linux-x86_64-440.36.run  -no-x-check -no-nouveau-check -no-opengl-files
 ```
-### Option 1: install from .deb
+### Install CUDA
+#### Option 1: install from .deb
 ```
 sudo dpkg -i cuda-repo-ubuntu1604-10-1-local-10.1.168-418.67_1.0-1_amd64.deb
 sudo apt-key add /var/cuda-repo-10-1-local-10.1.168-418.67/7fa2af80.pub
 sudo apt-get update
 sudo apt-get install cuda
 ```
-### Option 2: install from .run
+#### Option 2: install from .run
 ```
+# in order to install nvidia driver
+sudo service lightdm stop
 sudo sh cuda_10.1.105_418.39_linux.run  --no-opengl-libs
+```
+#### Update ~/.bashrc with following content (in case of cuda 10.1):
+```
+# set PATH for cuda 10.1 installation
+if [ -d "/usr/local/cuda-10.1/bin/" ]; then
+    export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+fi
 ```
