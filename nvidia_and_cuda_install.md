@@ -107,9 +107,12 @@ $sudo vim /etc/X11/xorg.conf
 __________________________________________________________________________
 ## 4. Ubuntu login with black screen (Bug fix)
 ### or named "Ubuntu Freezing at Boot Screen"
-### 4.1 Print 'e' in ubuntu advance option.
-### 4.2 Add 'nomodeset' at the line that starts with 'Linux', ex. 'quiet splash $vt_handoff nomodeset'.
-### 4.3 Update grub file for permanet change in grub:
+### 4.1 Fix to login
+```
+Print 'e' in ubuntu advance option.
+Add 'nomodeset' at the line that starts with 'Linux', ex. 'quiet splash $vt_handoff nomodeset'.
+```
+### 4.2 Update grub file for permanet fix:
 ```
 # Add “nogpumanager” kernal boot parameter, GRUB_CMDLINE_LINUX_DEFAULT=“nogpumanager quiet splash”
 $sudo vim /etc/default/grub
