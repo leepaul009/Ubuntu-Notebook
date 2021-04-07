@@ -101,8 +101,17 @@ $sudo vim /etc/X11/xorg.conf
 ### 3.2 Different solution for ubuntu 16.04 as that has a different GL library layout
 ```
 # 1. Purge all nvidia driver packages so the internal Aspeed graphics works again
-# 2. Download the .run installer driver https://http.download.nvidia.com/XFree86/Linux-x86_64/
-# 3. Install nvidia dirvier with options, "--dkms --no-opengl-files"
+sudo apt purge nvidia*
+sudo apt-get autoremove --purge cuda
+# 2. Modify system file.
+sudo vim /etc/modprobe.d/blacklist.conf
+sudo vim /etc/default/grub
+lsmod |grep nouveau
+# 3. Download the .run installer driver https://http.download.nvidia.com/XFree86/Linux-x86_64/
+# 4. Install nvidia dirvier with options, "--dkms --no-opengl-files"
+sudo chmod +x NVIDIA-Linux-x86_64-440.36.run
+sudo service lightdm stop
+sudo ./NVIDIA-Linux-x86_64-440.36.run -no-x-check -no-nouveau-check -no-opengl-files
 ```
 __________________________________________________________________________
 ## 4. Ubuntu login with black screen (Bug fix)
