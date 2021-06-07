@@ -127,3 +127,11 @@ Add 'nomodeset' at the line that starts with 'Linux', ex. 'quiet splash $vt_hand
 $sudo vim /etc/default/grub
 $sudo update-grub
 ```
+## 5. cudnn install
+```
+$ tar -xzvf cudnn-x.x-linux-x64-v8.x.x.x.tgz
+# Copy the following files into the CUDA Toolkit directory.
+$ sudo cp cuda/include/cudnn*.h /usr/local/cuda/include 
+$ sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64 
+$ sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
+```
