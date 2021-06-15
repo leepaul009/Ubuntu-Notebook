@@ -16,7 +16,23 @@ cd ddrescue-1.25
 ./configure
 make
 make check
-make install
+(sudo) make install
+
+
+lsblk -o name,label,size,fstype,model
+
+
+# Rescue the most important part of the disc first.
+(sudo) ddrescue -i0 -s50MiB /dev/sdc hdimage mapfile
+(sudo) ddrescue -i0 -s1MiB -d -r3 /dev/sdc hdimage mapfile
+
+# Then rescue some key disc areas.
+(sudo) ddrescue -i30GiB -s10GiB /dev/sdc hdimage mapfile
+(sudo) ddrescue -i230GiB -s5GiB /dev/sdc hdimage mapfile
+
+# Now rescue the rest (does not recopy what is already done).
+(sudo) ddrescue /dev/sdc hdimage mapfile
+(sudo) ddrescue -d -r3 /dev/sdc hdimage mapfile
 ```
 
 other:
