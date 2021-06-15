@@ -4,6 +4,8 @@ https://www.technibble.com/forums/threads/guide-to-using-ddrescue.48269/#post-37
 
 ddrescue:
 https://www.gnu.org/software/ddrescue/
+Documentation:
+https://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html
 ```
 # Download the lastest ddrescue
 wget http://mirror.kumi.systems/gnu/ddrescue/ddrescue-1.25.tar.lz
@@ -34,6 +36,11 @@ lsblk -o name,label,size,fstype,model
 (sudo) ddrescue /dev/sdc hdimage mapfile
 (sudo) ddrescue -d -r3 /dev/sdc hdimage mapfile
 ```
+mount partition.img(seems to be ntfs) to directory mountpoint
+```
+mount -o loop,ro partition.img mountpoint
+```
+
 
 other:
 https://developer.aliyun.com/article/469865
