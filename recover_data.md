@@ -7,3 +7,6 @@ https://www.gnu.org/software/ddrescue/
 ```
 wget http://mirror.kumi.systems/gnu/ddrescue/ddrescue-1.10.tar.gz
 ```
+
+other:
+https://developer.aliyun.com/article/469865
