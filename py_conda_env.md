@@ -1,4 +1,5 @@
-## Conda
+# Conda
+## Conda env
 ### conda export env to yml file
 ```
 conda env export > ***.yml
@@ -7,6 +8,13 @@ conda env export > ***.yml
 ```
 conda env create -f ***.yml
 ```
+### others
+```
+# isntall Tensorflow2.x:
+conda create -n paul-tf-gpu tensorflow-gpu
+
+```
+
 
 ### Jupyter setup
 ```
