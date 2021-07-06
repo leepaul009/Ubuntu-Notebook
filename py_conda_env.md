@@ -18,6 +18,9 @@ conda create -n paul-tf-gpu tensorflow-gpu
 
 ### Jupyter setup
 ```
+conda install -c conda-forge notebook
+pip install notebook
+
 jupyter notebook --generate-config
 
 jupyter notebook password
