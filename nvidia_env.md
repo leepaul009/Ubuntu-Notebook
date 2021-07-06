@@ -36,6 +36,8 @@ sudo chmod +x NVIDIA-Linux-x86_64-440.36.run
 sudo service lightdm stop
 # sudo ./NVIDIA-Linux-x86_64-440.36.run --dkms  -no-x-check -no-nouveau-check -no-opengl-files
 sudo ./NVIDIA-Linux-x86_64-440.36.run  -no-x-check -no-nouveau-check -no-opengl-files
+# if it is said there is already driver installed, we could still install (checked)
+# for the option "nvidia-xconfig utility", you could select yes
 ```
 ### 2.2 Install CUDA
 #### 2.2.1 Option 1: install from .deb
