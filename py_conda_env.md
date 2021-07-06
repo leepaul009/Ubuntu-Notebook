@@ -1,3 +1,13 @@
+## Conda
+### conda export env to yml file
+```
+conda env export > ***.yml
+```
+### conda import env from yml file
+```
+conda env create -f ***.yml
+```
+
 ### Jupyter setup
 ```
 jupyter notebook --generate-config
