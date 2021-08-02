@@ -3,12 +3,12 @@
 rsync --progress -avhe ssh /usr/local/  XXX.XXX.XXX.XXX:/BackUp/usr/local/
 ```
 
-## compress file
+## compress file: 
 ```
 tar cvfz target.tar.gz /source
 ```
 
-## symlink 
+## symlink: create a "link" refer to original file or folder "source" 
 ```
 ln -s /source /link
 ```
