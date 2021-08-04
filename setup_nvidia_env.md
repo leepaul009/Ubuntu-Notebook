@@ -57,9 +57,9 @@ sudo sh cuda_10.1.105_418.39_linux.run  --no-opengl-libs
 #### 2.2.3 Update ~/.bashrc with following content (in case of cuda 10.1):
 ```
 # set PATH for cuda 10.1 installation
-if [ -d "/usr/local/cuda-10.1/bin/" ]; then
-    export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}
-    export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+if [ -d "/usr/local/cuda/bin/" ]; then
+    export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 fi
 ```
 
