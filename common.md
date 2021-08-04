@@ -1,3 +1,8 @@
+### Ownership and access right:
+#### access right:
+```
+sudo chmod -R 755 folder
+```
 #### make the current user ownership everything inside the folder (and the folder itself):
 ```
 sudo chown -R $USER ~/folder
