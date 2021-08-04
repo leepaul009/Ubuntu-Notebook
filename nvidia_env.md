@@ -62,9 +62,11 @@ if [ -d "/usr/local/cuda-10.1/bin/" ]; then
 fi
 ```
 __________________________________________________________________________
-## 3. Ubuntu login loop (Bug fix)
-### 3.1 solution for ubuntu 18.04 (not sure if it's available for ubuntu20)
-#### Refer to https://forums.developer.nvidia.com/t/ubuntu-18-04-login-loop-after-installing-nvidia-driver/81280
+## 3. Issue when installing nvidia driver
+
+### 3.1 Ubuntu login loop (Bug fix)
+#### 3.1.1 solution for ubuntu 18.04 (not sure if it's available for ubuntu20)
+Refer to https://forums.developer.nvidia.com/t/ubuntu-18-04-login-loop-after-installing-nvidia-driver/81280
 ```
 $sudo prime-select nvidia
 
@@ -100,7 +102,7 @@ $sudo vim /etc/X11/xorg.conf
         EndSection
 # Then reboot
 ```
-### 3.2 Different solution for ubuntu 16.04 as that has a different GL library layout
+#### 3.1.2 Different solution for ubuntu 16.04 as that has a different GL library layout
 ```
 # 1. Purge all nvidia driver packages so the internal Aspeed graphics works again
 sudo apt purge nvidia*
@@ -115,21 +117,51 @@ sudo chmod +x NVIDIA-Linux-x86_64-440.36.run
 sudo service lightdm stop
 sudo ./NVIDIA-Linux-x86_64-440.36.run -no-x-check -no-nouveau-check -no-opengl-files
 ```
-__________________________________________________________________________
-## 4. Ubuntu login with black screen (Bug fix)
-### or named "Ubuntu Freezing at Boot Screen"
-### 4.1 Fix to login
+
+### 3.2 Ubuntu login with black screen (Bug fix)
+or named "Ubuntu Freezing at Boot Screen"
+#### 3.2.1 Fix to login
 ```
 Print 'e' in ubuntu advance option.
 Add 'nomodeset' at the line that starts with 'Linux', ex. 'quiet splash $vt_handoff nomodeset'.
 ```
-### 4.2 Update grub file for permanet fix:
+#### 3.2.2 Update grub file for permanet fix:
 ```
 # Add “nogpumanager” kernal boot parameter, GRUB_CMDLINE_LINUX_DEFAULT=“nogpumanager quiet splash”
 $sudo vim /etc/default/grub
 $sudo update-grub
 ```
-## 5. cudnn install
+
+### 3.3 Install nvidia driver with security boot
+```
+# create new MOK key 
+    # approach 1 (recommended, work)
+    sudo update-secureboot-policy --new-key
+    # approach 2
+    openssl req -config /usr/lib/shim/mok/openssl.cnf -subj "OSD MOK Signing Key" -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "MOK.priv" -out "MOK.der"
+# then, files of "MOK key" will be generated on:
+    /var/lib/shim-signed/mok/MOK.priv
+    /var/lib/shim-signed/mok/MOK.der
+
+# import MOK key
+    # approach 1 (work)
+    sudo mokutil --import /var/lib/shim-signed/mok/MOK.der
+    # approach 2 (does not work: return a log of "No DKMS modules installed.")
+    sudo update-secureboot-policy --enroll-key
+# if use approach 1 to import MOK.der, it will let you input a "input password"(such as eya@@)
+
+# Reboot and enroll the key in MokManager with the preset password during the import
+    # when it was rebooting, a blue menu appeared asking to press any key, you should press. then a menu labbeled as "Perform MOK Management" appeared, there are the following 4 options:
+        1. Continue boot
+        2. Enroll Key
+        3. Enroll Key from Disk
+        4. Enroll Key from Hash
+    # You should choose option 2, and input the "input password"(refer to previous step) and then continued to boot.
+```
+
+
+__________________________________________________________________________
+## 6. cudnn install
 ```
 $ tar -xzvf cudnn-x.x-linux-x64-v8.x.x.x.tgz
 # Copy the following files into the CUDA Toolkit directory.
