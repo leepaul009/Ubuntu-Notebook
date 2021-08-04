@@ -8,13 +8,20 @@ conda env export > ***.yml
 ```
 conda env create -f ***.yml
 ```
-### others
+### create env
+```
+conda create -n paul-py3 python=3.
+```
+
+### Tensorflow
 ```
 # isntall Tensorflow2.x:
 conda create -n paul-tf-gpu tensorflow-gpu
-
 ```
 
+```
+conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+```
 
 ### Jupyter setup
 ```
