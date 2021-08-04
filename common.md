@@ -1,7 +1,7 @@
 #### make the current user ownership everything inside the folder (and the folder itself):
 ```
 sudo chown -R $USER ~/folder
-sudo chown -R username:group directory
+sudo chown -R <username>:<group> <directory>
 # use the default group for that user
 sudo chown -R $USER: ~/folder
 # change only the group
