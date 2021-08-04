@@ -3,18 +3,16 @@
 Menu:
 1. Preprocessing (nvidia driver&cuda install)
 2. Installtion (nvidia driver&cuda install)
-3. Ubuntu login loop (Bug fix)
-4. Ubuntu login with black screen (Bug fix)
-...
+3. Fix issue
 ```
 ## 1. Preprocessing (nvidia driver&cuda install)
-### 1.1 Uninstall nvidia and cuda if installed with .deb files and "apt install"
+### 1.1 Uninstall nvidia and cuda
 ```
+# approach 1: if installed with .deb files and "apt install"
 $sudo apt purge nvidia*
 $sudo apt-get autoremove --purge cuda
-```
-### or if installed with .run file:
-```
+
+# approach 2: if installed with .run file:
 $sudo /usr/local/cuda-11.1/bin/cuda-uninstaller
 $sudo /usr/bin/nvidia-uninstall
 ```
@@ -29,25 +27,28 @@ $sudo update-initramfs -u
 # Reboot and check with the following cmd:
 $lsmod |grep nouveau
 ```
+
 ## 2. Installation (nvidia driver&cuda install)
 ### 2.1 Install nvidia driver
 ```
 sudo chmod +x NVIDIA-Linux-x86_64-440.36.run
 sudo service lightdm stop
-# sudo ./NVIDIA-Linux-x86_64-440.36.run --dkms  -no-x-check -no-nouveau-check -no-opengl-files
-sudo ./NVIDIA-Linux-x86_64-440.36.run  -no-x-check -no-nouveau-check -no-opengl-files
+# (dropped) sudo ./NVIDIA-Linux-x86_64-440.36.run --dkms  -no-x-check -no-nouveau-check -no-opengl-files
+sudo ./NVIDIA-Linux-x86_64-XXX.XX.run
+# for ubuntu 16.04:
+    sudo ./NVIDIA-Linux-x86_64-440.36.run  -no-x-check -no-nouveau-check -no-opengl-files
 # if it is said there is already driver installed, we could still install (checked)
 # for the option "nvidia-xconfig utility", you could select yes
 ```
 ### 2.2 Install CUDA
-#### 2.2.1 Option 1: install from .deb
+#### 2.2.1 Approach 1: install from .deb
 ```
 sudo dpkg -i cuda-repo-ubuntu1604-10-1-local-10.1.168-418.67_1.0-1_amd64.deb
 sudo apt-key add /var/cuda-repo-10-1-local-10.1.168-418.67/7fa2af80.pub
 sudo apt-get update
 sudo apt-get install cuda
 ```
-#### 2.2.2 Option 2: install from .run
+#### 2.2.2 Approach 2: install from .run
 ```
 # in order to install nvidia driver
 sudo service lightdm stop
@@ -61,6 +62,7 @@ if [ -d "/usr/local/cuda-10.1/bin/" ]; then
     export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 fi
 ```
+
 __________________________________________________________________________
 ## 3. Issue when installing nvidia driver
 
