@@ -1,4 +1,4 @@
-#### Make the current user own everything inside the folder (and the folder itself):
+#### make the current user ownership everything inside the folder (and the folder itself):
 ```
 sudo chown -R $USER ~/folder
 sudo chown -R username:group directory
