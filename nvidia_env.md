@@ -65,7 +65,10 @@ __________________________________________________________________________
 ## 3. Issue when installing nvidia driver
 
 ### 3.1 Ubuntu login loop (Bug fix)
+Or other issue(after click "login" button, screen freezed)
 #### 3.1.1 solution for ubuntu 18.04 (not sure if it's available for ubuntu20)
+Even if you can not login in but you can access with ssh, and you will notice that GUI are using nvidia GPU. 
+After fix this issue, OS doesn't use nvidia GPU for GUI any more.
 Refer to https://forums.developer.nvidia.com/t/ubuntu-18-04-login-loop-after-installing-nvidia-driver/81280
 ```
 $sudo prime-select nvidia
@@ -94,7 +97,7 @@ $lshw -c display | grep bus
        bus info: pci@0000:83:00.0
        capabilities: vga_controller bus_master cap_list rom
 $sudo vim /etc/X11/xorg.conf
-# Wirte into following content that Identifier and BusID are refered to previous output  
+# Update {Section "Device"} with following content. Identifier and BusID are refered to previous output  
         Section "Device"
             Identifier     "ASPEED"
             Driver         "modesetting"
@@ -102,7 +105,7 @@ $sudo vim /etc/X11/xorg.conf
         EndSection
 # Then reboot
 ```
-#### 3.1.2 Different solution for ubuntu 16.04 as that has a different GL library layout
+#### 3.1.2 (Only for ubuntu 16.04) Different solution for ubuntu 16.04 as that has a different GL library layout
 ```
 # 1. Purge all nvidia driver packages so the internal Aspeed graphics works again
 sudo apt purge nvidia*
