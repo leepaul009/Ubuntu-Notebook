@@ -1,19 +1,29 @@
-## copy link rather than copy the files linked
+#### Make the current user own everything inside the folder (and the folder itself):
+```
+sudo chown -R $USER ~/folder
+sudo chown -R username:group directory
+# use the default group for that user
+sudo chown -R $USER: ~/folder
+# change only the group
+chown :<group> <file>
+```
+
+#### copy link rather than copy the files linked
 ```
 rsync --progress -avhe ssh /usr/local/  XXX.XXX.XXX.XXX:/BackUp/usr/local/
 ```
 
-## compress file: 
+#### compress file: 
 ```
 tar cvfz target.tar.gz /source
 ```
 
-## symlink: create a "link" refer to original file or folder "source" 
+#### symlink: create a "link" refer to original file or folder "source" 
 ```
 ln -s /source /link
 ```
 
-## samba server
+#### samba server
 ```
 vim /etc/samba/smb.conf
 
