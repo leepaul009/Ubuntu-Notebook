@@ -72,6 +72,8 @@ if [ -d "/usr/local/cuda/bin/" ]; then
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 fi
 ```
+#### 2.2.4 (Issue) 
+if nvidia failed after CUDA installed, please reinstall nvidia driver.
 
 __________________________________________________________________________
 ## 3. Issue when installing nvidia driver
