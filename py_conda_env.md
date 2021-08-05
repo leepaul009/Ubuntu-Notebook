@@ -1,17 +1,19 @@
 # Conda
 ## Conda env
+```
 ### conda export env to yml file
-```
 conda env export > ***.yml
-```
+
 ### conda import env from yml file
-```
 conda env create -f ***.yml
-```
-### create env
-```
+
+### create
 conda create -n paul-py3 python=3.
+
+### clone
+conda create --name myclone --clone myenv
 ```
+
 
 ### Tensorflow
 ```
