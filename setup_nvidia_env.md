@@ -6,6 +6,10 @@ Menu:
 3. Fix issue
 ```
 ## 1. Preprocessing (nvidia driver&cuda install)
+### nvidia&CUDA
+```
+418.40.04+ (CUDA 10.1)	440.33.01+ (CUDA 10.2)	450.36.06+ (CUDA 11.0)	450.80.02 (CUDA 11.1)	460.27.04 (CUDA 11.2)	465.19.01 (CUDA 11.3)	470.42 (CUDA 11.4)
+```
 ### 1.1 Uninstall nvidia and cuda
 ```
 # approach 1: if installed with .deb files and "apt install"
