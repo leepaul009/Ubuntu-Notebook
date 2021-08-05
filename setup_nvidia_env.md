@@ -9,7 +9,7 @@ Menu:
 ### nvidia&CUDA
 ```
 418.40.04+ (CUDA 10.1)	
-440.33.01+ (CUDA 10.2)	
+440.33.01+ (CUDA 10.2)	https://us.download.nvidia.com/XFree86/Linux-x86_64/440.100/NVIDIA-Linux-x86_64-440.100.run
 450.36.06+ (CUDA 11.0)	
 450.80.02 (CUDA 11.1)	
 460.27.04 (CUDA 11.2)	
