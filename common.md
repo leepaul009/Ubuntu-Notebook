@@ -34,13 +34,12 @@ ln -s /source /link
 sudo apt update
 sudo apt install samba
 
-vim /etc/samba/smb.conf
-
+sudo vim /etc/samba/smb.conf
 # write into
 "
 [my share]
-path=/home/deeplearning
-valid users=deeplearning
+path=/home/lqurszh
+valid users=lqurszh
 browseable=yes
 writable=yes
 "
