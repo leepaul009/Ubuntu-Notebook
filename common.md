@@ -30,6 +30,10 @@ ln -s /source /link
 
 #### samba server
 ```
+# install with:
+sudo apt update
+sudo apt install samba
+
 vim /etc/samba/smb.conf
 
 # write into
