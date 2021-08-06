@@ -1,16 +1,18 @@
 ### Ownership and access right:
 #### access right:
 ```
-sudo chmod -R 755 folder
+sudo chmod 755 folder
+# add "-R" to influence all the folders or files
 ```
 #### make the current user ownership everything inside the folder (and the folder itself):
 ```
-sudo chown -R $USER ~/folder
-sudo chown -R <username>:<group> <directory>
+sudo chown $USER ~/folder
+sudo chown <username>:<group> <directory>
 # use the default group for that user
-sudo chown -R $USER: ~/folder
+sudo chown $USER: ~/folder
 # change only the group
 chown :<group> <file>
+# add "-R" to influence all the folders or files
 ```
 
 #### copy link rather than copy the files linked
