@@ -33,16 +33,21 @@ ln -s /source /link
 # install with:
 sudo apt update
 sudo apt install samba
+# check status:
+sudo systemctl status smbd
 
 sudo vim /etc/samba/smb.conf
 # write into
-"
-[my share]
-path=/home/lqurszh
-valid users=lqurszh
-browseable=yes
-writable=yes
-"
+  "
+  [my share]
+  path=/home/lqurszh
+  valid users=lqurszh
+  browseable=yes
+  writable=yes
+  "
+# Add <user> (Windows login name) to Samba: 'sudo smbpasswd -a <user>'
+sudo smbpasswd -a lqurszh
 
-sudo service smbd restart
+# sudo service smbd restart
+sudo systemctl restart smbd.service nmbd.service
 ```
