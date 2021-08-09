@@ -36,6 +36,7 @@ sudo mount -a
 
 
 # format disk
+https://www.howtogeek.com/442101/how-to-move-your-linux-home-directory-to-another-hard-drive/
 ```
 # check partition
 lsblk
