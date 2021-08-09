@@ -38,13 +38,49 @@ sudo mount -a
 # format disk
 https://www.howtogeek.com/442101/how-to-move-your-linux-home-directory-to-another-hard-drive/
 ```
+# ex. /dev/sdb
+sudo fdisk /dev/sdb
+    g:  create a new empty GPT partition table
+    n:  add a new partition
+    the choose partition number, beg/end by default
+    w:  write table to disk and exit
+
+
 # check partition
 lsblk
 # To display a list containing file system information, add the -f option:
 lsblk -f
 # The general syntax for formatting disk partitions in Linux is:
 mkfs [options] [-t type fs-options] device [size]
-sudo mkfs -t ext4 /dev/sdf
+sudo mkfs -t ext4 /dev/sdb1
 
+# The /mnt point is as good a place as any. It is only a temporary mount point to allow us to copy data to the new drive.
+sudo mount /dev/sdb1 /mnt
+cd /mnt
+ls -ahl
+# We’re in our new file system. The default “lost+found” directory is not required so we can remove it.
+sudo rm -rf lost+found
+# We need to copy everything from the old home directory to the newly mounted filesystem. Using the r (recursive) and p (preserve) options will ensure all subdirectories are copied and that file ownerships, permissions, and other attributes are retained.
+sudo cp -rp /home/* /mnt
+
+sudo mv /home /home.orig
+sudo mkdir /home
+
+sudo umount /dev/sdb1
+sudo mount /dev/sdb1 /home/
+
+# Editing fstab
+sudo cp /etc/fstab /etc/fstab.orig
+# 
+sudo gedit /etc/fstab
+  Type the name of the partition at the start of the line, and then press Tab.
+  Type the mount point, /home,  and press Tab.
+  Type the filesystem description ext4, and press Tab.
+  Type defaults for the mount options, and press Tab.
+  Type the digit 0 for the filesystem dump option, and press Tab.
+  Type the digit 0 for the filesystem check option.
+  For example:
+    /dev/sdb1 /home ext4  defaults  0 0
+sudo reboot now
 ```
 
