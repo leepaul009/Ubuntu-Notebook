@@ -33,3 +33,17 @@ x-gvfs-show - show the mount option in the file manager. If this is on a GUI-les
 sudo mount -a
 # if you see no errors, the fstab entry is correct and you're safe to reboot
 ```
+
+
+# format disk
+```
+# check partition
+lsblk
+# To display a list containing file system information, add the -f option:
+lsblk -f
+# The general syntax for formatting disk partitions in Linux is:
+mkfs [options] [-t type fs-options] device [size]
+sudo mkfs -t ext4 /dev/sdf
+
+```
+
