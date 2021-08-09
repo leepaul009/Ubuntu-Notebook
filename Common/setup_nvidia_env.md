@@ -180,7 +180,7 @@ $sudo update-grub
 __________________________________________________________________________
 ## 6. cudnn install
 ```
-$ tar -xzvf cudnn-x.x-linux-x64-v8.x.x.x.tgz
+$ tar -xzvf cudnn-x.x-linux-x64-v8.x.x.x.tgz {-C output_dir}
 # Copy the following files into the CUDA Toolkit directory.
 $ sudo cp cuda/include/cudnn*.h /usr/local/cuda/include 
 $ sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64 
