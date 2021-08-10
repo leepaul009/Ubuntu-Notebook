@@ -12,6 +12,9 @@ conda create -n paul-py3 python=3.
 
 ### clone
 conda create --name myclone --clone myenv
+
+### list installed
+conda list | grep torch
 ```
 
 
