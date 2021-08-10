@@ -176,6 +176,17 @@ $sudo update-grub
     # You should choose option 2, and input the "input password"(refer to previous step) and then continued to boot.
 ```
 
+### 3.4 "An NVIDIA kernel module 'nvidia-drm' appears to already be loaded in your kernel."
+```
+# find out who is using nvidia-drm
+sudo lsof | grep nvidia-drm
+        lsof: WARNING: can't stat() fuse.gvfsd-fuse file system /run/user/1000/gvfs
+              Output information may be incomplete.
+# remove it
+sudo modprobe -r nvidia-drm
+        modprobe: FATAL: Module nvidia_drm is in use.(when GUI is used, while ssh remote return no output)
+# then, it seems that 'nvidia-drm' error disappeared if you do not reboot.
+```
 
 __________________________________________________________________________
 ## 6. cudnn install
