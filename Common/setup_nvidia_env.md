@@ -160,6 +160,7 @@ $sudo update-grub
     /var/lib/shim-signed/mok/MOK.priv
     /var/lib/shim-signed/mok/MOK.der
 
+
 # import MOK key
     # approach 1 (work)
     sudo mokutil --import /var/lib/shim-signed/mok/MOK.der
