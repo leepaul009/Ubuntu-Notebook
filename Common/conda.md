@@ -15,6 +15,11 @@ conda create --name myclone --clone myenv
 
 ### list installed
 conda list | grep torch
+
+### remove env and all its packages:
+conda remove --name myenv --all
+# or: conda remove --name myenv --all
+# verify: conda info --envs
 ```
 
 
