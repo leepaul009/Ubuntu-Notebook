@@ -30,6 +30,23 @@ tar cvfz target.tar.gz /source
 ln -s /source /link
 ```
 
+### How to automate SSH login with password?
+```
+$ ssh-keygen -t rsa -b 2048
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/username/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/username/.ssh/id_rsa.
+Your public key has been saved in /home/username/.ssh/id_rsa.pub.
+
+$ ssh-copy-id id@server
+id@server's password: 
+
+$ ssh id@server
+# check if ssh-rsa existed in .ssh/authorized_keys
+```
+
 #### samba server
 ```
 # install with:
