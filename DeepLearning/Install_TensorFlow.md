@@ -7,7 +7,19 @@ conda install jupyterlab notebook
 ```
 
 
-### tensorflow
+### install tensorflow with conda
 ```
 conda create -n tf-gpu tensorflow-gpu
+```
+
+### install tensorflow with pip
+```
+# Requires the latest pip
+pip install --upgrade pip
+
+# Current stable release for CPU and GPU
+pip install tensorflow
+
+# Or try the preview build (unstable)
+pip install tf-nightly
 ```
