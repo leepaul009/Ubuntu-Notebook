@@ -10,6 +10,14 @@ conda install jupyterlab notebook
 ### install tensorflow with conda
 ```
 conda create -n tf-gpu tensorflow-gpu
+
+# pip install bert-tensorflow
+conda install -c conda-forge bert-tensorflow
+conda install -c conda-forge tensorflow-hub
+
+conda install -c conda-forge tensorflow-text
+
+conda install -c conda-forge scikit-learn
 ```
 
 ### install tensorflow with pip
