@@ -7,4 +7,7 @@ conda install jupyterlab notebook
 ```
 
 
-
+### tensorflow
+```
+conda create -n tf-gpu tensorflow-gpu
+```
