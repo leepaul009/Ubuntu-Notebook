@@ -47,6 +47,25 @@ $ ssh id@server
 # check if ssh-rsa existed in .ssh/authorized_keys
 ```
 
+### How to use ssh key to login remote server with vscode?
+```
+# Here is how I managed to connect to the remote VM:
+
+# Access normally the remote VM from MobaXterm or other ssh client to verify it's working.
+# Generate a ssh key:
+ssh-keygen -t rsa
+# Install the public key in the remote server:
+ssh-copy-id -i $HOME/.ssh/id_rsa.pub <username>@<ipaddress>
+# Make sure that you can access the VM from the command line using ssh.
+# Install the Remote - SSH extension on VSCode.
+# Press F1 > search and click Remote-SSH: connect to a host > click Add New SSH Host
+# Write ssh <username>@<ipaddress> and press Enter.
+# Choose the config file generated with the ssh key.
+# You can now connect to the remote server.
+# That should do it, so I am going to go ahead and close the thread.
+```
+
+
 #### samba server
 ```
 # install with:
