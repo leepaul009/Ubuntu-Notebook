@@ -343,7 +343,12 @@ public:
         sz[0] = max_prev_sz;
       }
     } // end row
-
+    int ans = 0;
+    for (int i=0; i<nc; ++i){
+      if (!dp[i]) continue;
+      ans = max(ans, (int)sz[i]);
+    }
+    return ans;
   }
 };
 
