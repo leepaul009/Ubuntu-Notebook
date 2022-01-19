@@ -20,9 +20,16 @@ chown :<group> <file>
 rsync --progress -avhe ssh /usr/local/  XXX.XXX.XXX.XXX:/BackUp/usr/local/
 ```
 
-#### compress file: 
+#### compress/uncompress file: 
 ```
+# compress:
 tar cvfz target.tar.gz /source
+
+# compress file with password
+tar -czvf - ./files | openssl des3 -salt -k {password} -out files.tar.gz
+
+# uncompress file with password
+openssl des3 -d -k {password} -salt -in files.tar.gz | tar xzvf -
 ```
 
 #### symlink: create a "link" refer to original file or folder "source" 
