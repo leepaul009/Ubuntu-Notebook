@@ -29,8 +29,12 @@ conda remove --name myenv --all
 conda create -n paul-tf-gpu tensorflow-gpu
 ```
 
+### Pytorch 
 ```
 conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+
+# 1.6:
+conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.2 -c pytorch
 ```
 
 ### Jupyter setup
