@@ -37,6 +37,10 @@ openssl des3 -d -k {password} -salt -in files.tar.gz | tar xzvf -
 ln -s /source /link
 ```
 
+### strongth SSH connection:
+```
+ssh -o ServerAliveInterval=30 {uid@ip}
+```
 ### How to automate SSH login with password?
 ```
 $ ssh-keygen -t rsa -b 2048
