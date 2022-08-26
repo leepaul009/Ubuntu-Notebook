@@ -15,7 +15,10 @@ git config --global user.email [your email address here]
 git config -e # show
 git config --global core.editor "vim" # update
 
-
-
+# feature is downstream and master is upstream, I want to get updates of master in feature branch:
+git checkout master
+git pull
+git checkout feature
+git rebase master
 ```
 
