@@ -20,5 +20,19 @@ git checkout master
 git pull
 git checkout feature
 git rebase master
+
+# check local branch
+git branch
+# check remote branch, and prefix with remotes is remote-branch
+git branch -a
+# create local branch 
+git branch {NAME_OF_A_LOCAL_BRANCH}
+
+
+
+
+
+
+
 ```
 
