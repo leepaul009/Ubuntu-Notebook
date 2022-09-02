@@ -37,6 +37,17 @@ openssl des3 -d -k {password} -salt -in files.tar.gz | tar xzvf -
 ln -s /source /link
 ```
 
+### install ohmyz https://ohmyz.sh/#install (auto-suggestion function for terminal)
+```
+# (need to install zsh before following steps) install:
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# install auto-suggestion function:
+# details in https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# change theme by editing file ~/.zshrc
+ZSH_THEME="ys"
+```
+
 ### strongth SSH connection:
 ```
 ssh -o ServerAliveInterval=30 {uid@ip}
