@@ -28,7 +28,8 @@ git branch -a
 # create local branch 
 git branch {NAME_OF_A_LOCAL_BRANCH}
 
-
+# Delete all local branches except for “master”
+git branch | grep -v "master" | xargs git branch -D
 
 
 
