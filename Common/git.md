@@ -15,12 +15,6 @@ git config --global user.email [your email address here]
 git config -e # show
 git config --global core.editor "vim" # update
 
-# feature is downstream and master is upstream, I want to get updates of master in feature branch:
-git checkout master
-git pull
-git checkout feature
-git rebase master
-
 # check local branch
 git branch
 # check remote branch, and prefix with remotes is remote-branch
@@ -33,7 +27,25 @@ git branch | grep -v "master" | xargs git branch -D
 
 
 
+# feature is downstream and master is upstream, I want to get updates of master in feature branch:
+# when master(remote) has new commits that personal branch(local/remote) doesn't have:
+A - B - C - E - D - F (master)
+        \
+         a - b (personal branch)
+# we should do rebase to get new commits of master to personal branch(local)
+A - B - C - E - D - F (master)
+                    \
+                     a - b (personal branch)
+# then do:
+git checkout master
+git pull # get new commits
+git checkout feature
+git rebase master # try to get new commits of master
 
-
+# but now we can not push changes to remote by 'git push' because remote graph is different from local
+# if branch 'feature' is only for yourself:
+git push --force origin feature
+# else branch 'feature' is only for multiple person:
+git push --force-with-lease origin feature  # 使用该命令在强制覆盖前会进行一次检查如果其他人在该分支上有提交会有一个警告，此时可以避免福改代码的风险。
 ```
 
