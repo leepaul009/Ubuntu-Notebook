@@ -1,13 +1,13 @@
+## terminology
 
 ### what is Gibbs free energy?
-```
 To explore the dynamic properties behind mutations, molecular dynamic (MD) simulations have been widely performed, especially in unveiling the mechanism of drug failure behind mutation. When comparing wild type (WT) and mutants (MTs), the structural changes along with solvation free energy (SFE), and Gibbs free energy (GFE) are calculated after the MD simulation, to measure the effect of mutations on protein structure.
-```
 
-MMseqs2 software: used to find the “similar proteins”
+
+### MMseqs2 software
+used to find the “similar proteins”
 
 ### SCOP
-```
 The classification of the proteins in SCOP is on hierarchical levels as follows:
 
 Family. Proteins are clustered together into families on the basis of one of two criteria that imply their having a common evolutionary origin: first, all proteins that have residue identities of 30% and greater; second, proteins with lower sequence identities but whose functions and structures are very similar; for example, globins with sequence identities of 15%.
@@ -31,7 +31,15 @@ Class. The different folds have been grouped into classes. Most of the folds are
 Other classes have been assigned for peptides, small proteins, theoretical models, nucleic acids and carbohydrates.
 
 There are now a number of other databases which classify protein structures, such as CATH (4), FSSP (5), Entrez (6) and DDBASE (7), however, the distinction between evolutionary relationships and those that arise from the physics and chemistry of proteins is a feature that is so far unique to SCOP. Because functional similarity is implied by an evolutionary relationship but not necessarily by a physical relationship, we believe that this classification level is of considerable value, for example as a way of reliably linking very distant sequence families.
-```
+
 
 PremPS: valuate the effects of missense mutations on protein stability.
+
+### Protein-protein interactions
+Protein-protein interactions (PPIs) are involved in many cellular processes. Experimentally obtained protein quaternary structures provide the location of protein-protein interfaces, the surface region of a given protein that interacts with another. These regions are termed half-interfaces (HIs).
+Knowing the HIs involved in protein-protein interactions can greatly assist in determining the interaction pose of two proteins. According to currently available solved structures of multimeric complexes, on average, approximately one third of a protein’s surface is known to form an interface in quaternary complexes. Thus, protein-protein interfaces were viewed as being special, and many efforts were made to predict these surface regions.
+
+## Evaluation
+### Matthew’s correlation coefficient formula
+MCC is a best single-value classification metric which helps to summarize the confusion matrix or an error matrix. 
 
