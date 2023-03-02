@@ -55,6 +55,8 @@ In biology, cell signaling (cell signalling in British English) or cell communic
 ### proteostasis
 is the process that regulates proteins within the cell in order to maintain the health of both the cellular proteome and the organism itself
 
+### phenotype
+In genetics, the phenotype is the set of observable characteristics or traits of an organism.
 
 ## evaluation
 
