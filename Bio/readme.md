@@ -52,6 +52,9 @@ A ubiquitin ligase (also called an E3 ubiquitin ligase) is a protein that recrui
 ### cell signaling
 In biology, cell signaling (cell signalling in British English) or cell communication is the ability of a cell to receive, process, and transmit signals with its environment and with itself
 
+### proteostasis
+is the process that regulates proteins within the cell in order to maintain the health of both the cellular proteome and the organism itself
+
 
 ## evaluation
 
