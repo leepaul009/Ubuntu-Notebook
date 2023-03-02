@@ -33,3 +33,5 @@ Other classes have been assigned for peptides, small proteins, theoretical model
 There are now a number of other databases which classify protein structures, such as CATH (4), FSSP (5), Entrez (6) and DDBASE (7), however, the distinction between evolutionary relationships and those that arise from the physics and chemistry of proteins is a feature that is so far unique to SCOP. Because functional similarity is implied by an evolutionary relationship but not necessarily by a physical relationship, we believe that this classification level is of considerable value, for example as a way of reliably linking very distant sequence families.
 ```
 
+PremPS: valuate the effects of missense mutations on protein stability.
+
