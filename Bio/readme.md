@@ -39,7 +39,22 @@ PremPS: valuate the effects of missense mutations on protein stability.
 Protein-protein interactions (PPIs) are involved in many cellular processes. Experimentally obtained protein quaternary structures provide the location of protein-protein interfaces, the surface region of a given protein that interacts with another. These regions are termed half-interfaces (HIs).
 Knowing the HIs involved in protein-protein interactions can greatly assist in determining the interaction pose of two proteins. According to currently available solved structures of multimeric complexes, on average, approximately one third of a protein’s surface is known to form an interface in quaternary complexes. Thus, protein-protein interfaces were viewed as being special, and many efforts were made to predict these surface regions.
 
-## Evaluation
+### MutaBind2: 
+disease mutations and found that many of them were located on protein-binding interfaces
+to calculate the changes in binding affinity induced by mutations
+### MutaBind:
+assess the effects of cancer mutations on binding between CBL ubiquitin ligase and E2 conjugating enzyme
+
+### Cbl
+(named after Casitas B-lineage Lymphoma) is a mammalian gene encoding the protein CBL which is an E3 ubiquitin-protein ligase involved in cell signalling and protein ubiquitination. 
+### ubiquitin ligase 
+A ubiquitin ligase (also called an E3 ubiquitin ligase) is a protein that recruits an E2 ubiquitin-conjugating enzyme that has been loaded with ubiquitin, recognizes a protein substrate, and assists or directly catalyzes the transfer of ubiquitin from the E2 to the protein substrate. In simple and more general terms, the ligase enables movement of ubiquitin from a ubiquitin carrier to another thing (the substrate) by some mechanism. 
+### cell signaling
+In biology, cell signaling (cell signalling in British English) or cell communication is the ability of a cell to receive, process, and transmit signals with its environment and with itself
+
+
+## evaluation
+
 ### Matthew’s correlation coefficient formula
 MCC is a best single-value classification metric which helps to summarize the confusion matrix or an error matrix. 
 
