@@ -62,8 +62,25 @@ In genetics, the phenotype is the set of observable characteristics or traits of
 Reverse mutation, also called reversion, denotes any mutational process or mutation that restores the wild-type phenotype to cells already carrying a phenotype-altering forward mutation. Forward mutations confer a gene sequence and phenotype different from that conferred by the wild-type gene. True reversions restore the wild-type gene sequence, whereas pseudoreversions restore the wild-type phenotype by a compensating gene sequence change.
 
 
+
+## dataset
+
+BFD 
+UniRef50 
+UniRef100
+
+### NetSurfP-2.0
+secondary structure data set
+
 ## evaluation
 
 ### Matthew’s correlation coefficient formula
 MCC is a best single-value classification metric which helps to summarize the confusion matrix or an error matrix. 
+
+
+
+
+
+
+
 
