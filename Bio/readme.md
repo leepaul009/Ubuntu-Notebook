@@ -61,6 +61,11 @@ In genetics, the phenotype is the set of observable characteristics or traits of
 ### Reverse mutation
 Reverse mutation, also called reversion, denotes any mutational process or mutation that restores the wild-type phenotype to cells already carrying a phenotype-altering forward mutation. Forward mutations confer a gene sequence and phenotype different from that conferred by the wild-type gene. True reversions restore the wild-type gene sequence, whereas pseudoreversions restore the wild-type phenotype by a compensating gene sequence change.
 
+### residue
+In biochemistry or molecular biology, a residue refers to a single unit that makes up a polymer, such as an amino acid in a polypeptide or protein. Example of usage: a polypeptide consisting of 5 amino acid residues.
+
+### side chain
+In organic chemistry and biochemistry, a side chain is a chemical group that is attached to a core part of the molecule called the "main chain" or backbone. The side chain is a hydrocarbon branching element of a molecule that is attached to a larger hydrocarbon backbone.
 
 
 ## dataset
