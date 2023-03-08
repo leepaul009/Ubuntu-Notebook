@@ -67,6 +67,8 @@ In biochemistry or molecular biology, a residue refers to a single unit that mak
 ### side chain
 In organic chemistry and biochemistry, a side chain is a chemical group that is attached to a core part of the molecule called the "main chain" or backbone. The side chain is a hydrocarbon branching element of a molecule that is attached to a larger hydrocarbon backbone.
 
+### tertiary protein structure
+3rd structure
 
 ## dataset
 
