@@ -70,6 +70,9 @@ In organic chemistry and biochemistry, a side chain is a chemical group that is 
 ### tertiary protein structure
 3rd structure
 
+### evolutionary information
+evolutionary information is included in the amino acid sequence of protein.
+
 ## dataset
 
 BFD 
