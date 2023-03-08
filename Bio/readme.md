@@ -75,12 +75,13 @@ evolutionary information is included in the amino acid sequence of protein.
 
 ## dataset
 
-BFD 
+BFD
 UniRef50 
 UniRef100
 
-### NetSurfP-2.0
-secondary structure data set
+NetSurfP-2.0:secondary structure data set
+
+ProTherm: collect thermodynamic parameter
 
 ## evaluation
 
