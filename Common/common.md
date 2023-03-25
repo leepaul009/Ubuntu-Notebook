@@ -86,9 +86,15 @@ ssh-copy-id -i $HOME/.ssh/id_rsa.pub <username>@<ipaddress>
 # You can now connect to the remote server.
 # That should do it, so I am going to go ahead and close the thread.
 ```
+### setup ssh in ubuntu
+```
+sudo apt install openssh-server
+# if can not install openssh-server because of depencies we can run: sudo apt-get remove --purge openssh-client
+sudo systemctl status ssh
+ sudo ufw allow ssh
+```
 
-
-#### samba server
+### samba server
 ```
 # install with:
 sudo apt update
