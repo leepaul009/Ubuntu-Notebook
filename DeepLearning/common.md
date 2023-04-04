@@ -4,6 +4,20 @@
 https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#installing-on-ubuntu-and-debian
 安装完nvidia-cuda之后，再创建容器时加上--gpus all，即可在容器内调用cuda
 ```
+### basic
+```
+# start with bash
+sudo docker run -it --runtime=nvidia --gpus all a7a1861d2150 /bin/bash
+# start with a share folder
+sudo docker run -it -v=/home/megvii/workspace/documents/ScanNet:/home/megvii/workspace/documents/ScanNet --runtime=nvidia --gpus all a7a1861d2150 /bin/bash
+# check if nvidia-smi work
+sudo docker run --rm --runtime=nvidia --gpus all a7a1861d2150 nvidia-smi
+```
+
+
+
+
+
 
 ```
 1. 查看所有镜像
