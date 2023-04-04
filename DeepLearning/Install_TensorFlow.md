@@ -1,3 +1,8 @@
+### tensorflow dep version
+```
+https://www.tensorflow.org/install/source#tested_build_configurations
+```
+
 ### Install tensorflow 1.15 with conda
 ```
 conda create -n tf1.15 python=3.6
