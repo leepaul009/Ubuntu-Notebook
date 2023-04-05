@@ -1,4 +1,10 @@
 
+### docker
+```
+# we could use image
+sudo docker save -o /home/sammy/your_image.tar your_image_name
+```
+
 ### nvidia container-toolkit
 ```
 https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#installing-on-ubuntu-and-debian
