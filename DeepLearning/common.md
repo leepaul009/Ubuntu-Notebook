@@ -1,14 +1,19 @@
 
 ### docker
 ```
+# speed up docker images download
+https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors
+
 # we could use image
 sudo docker save -o /home/sammy/your_image.tar your_image_name
 ```
 
 ### nvidia container-toolkit
 ```
-https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#installing-on-ubuntu-and-debian
-安装完nvidia-cuda之后，再创建容器时加上--gpus all，即可在容器内调用cuda
+# https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#installing-on-ubuntu-and-debian
+# 安装完nvidia-cuda之后，再创建容器时加上--gpus all，即可在容器内调用cuda
+# issue: after apt update it emit error with "E: 软件源 https://nvidia.github.io/libnvidia-container/stable/ubuntu18.04/amd64/ / 的选项 Signed-By 中含有互相冲突的值：/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg != E: 无法读取源列表":
+# go to /etc/apt/sources.list.d and remove all, then apt update work
 ```
 ### basic
 ```
