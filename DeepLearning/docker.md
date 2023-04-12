@@ -49,6 +49,8 @@ docker p
 docker attach container_ID
 9. 查看已停止运行的容器
 docker ps -a
+# stop all container
+sudo docker rm  $(sudo docker ps -q -a)
 10. 启动已停止的容器
 docker start container_ID
 11. 停止容器
