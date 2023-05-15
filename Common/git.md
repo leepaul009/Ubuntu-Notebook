@@ -49,3 +49,9 @@ git push --force origin feature
 git push --force-with-lease origin feature  # 使用该命令在强制覆盖前会进行一次检查如果其他人在该分支上有提交会有一个警告，此时可以避免福改代码的风险。
 ```
 
+```
+git stash list
+git stash pop # pop lastest one
+git stash drop            # drop top hash, stash@{0}
+git stash drop stash@{n}  # drop specific stash - see git stash list
+```
