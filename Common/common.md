@@ -30,6 +30,9 @@ tar -czvf - ./files | openssl des3 -salt -k {password} -out files.tar.gz
 
 # uncompress file with password
 openssl des3 -d -k {password} -salt -in files.tar.gz | tar xzvf -
+
+# compress with multi-core and big compress reate
+tar --use-compress-program=pigz -cvf FILE_NAME.tar DIR_OR_NAME
 ```
 
 #### symlink: create a "link" refer to original file or folder "source" 
