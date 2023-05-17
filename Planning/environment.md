@@ -1,5 +1,5 @@
 
 ### environment
 * dynamic agents
-* cached map association
+* cached map information of agent
 <br />
