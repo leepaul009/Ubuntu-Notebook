@@ -64,9 +64,8 @@ int main() {
 上述代码的问题是同样的。
 标准库提供了一种特殊的接口，来解决"生成this指针的shared_ptr"的问题：enable_shared_from_this    
 
-    
+### std::decay<T>::type and std::forward<T>
 ```
-std::decay<T>::type
 void func(T&& param) {
     // auto p = new T();
 }
@@ -76,4 +75,12 @@ func(i)
 这里传进来的param可以是lvalue，也可以是rvalue
 T可能是int&，也可能是int，如果我在func里用new来创建一个指针时，这个T可能是int&
 所以要用typename std::decay<T>::type == int(这是我想要的)
+    
+template<typename T> void f(T&&);
+int main() {
+    std::string s;
+    f(s); // T is std::string&
+    const std::string s2;
+    f(s2); // T is a const std::string&
+}
 ```
