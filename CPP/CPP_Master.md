@@ -15,7 +15,7 @@ Foo<> f;
 ## C++17:
 Foo f;
 ```
-
+------
 ### shared_ptr不能循环引用
 ```
 class Observer; // 前向声明
