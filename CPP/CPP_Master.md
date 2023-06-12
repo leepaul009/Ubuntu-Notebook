@@ -2,7 +2,7 @@
 ```
 a_vector.emplace_back(std::move(a_shared_pointer));
 ```
-std::shared_ptr reference count is atomic. increasing or decreasing the reference count requires atomic increment or decrement. This is hundred times slower than non-atomic increment/decrement, not to mention that if we increment and decrement the same counter we wind up with the exact number, wasting a ton of time and resources in the process.
+std::shared_ptr reference count is atomic. increasing or decreasing the reference count requires atomic increment or decrement. This is hundred times slower than non-atomic increment/decrement, not to mention that if we increment and decrement the same counter we wind up with the exact number, wasting a ton of time and resources in the process.  
 
 
 ### template
@@ -15,10 +15,12 @@ Foo<> f;
 ## C++17:
 Foo f;
 ```
-------
+
+
 ### shared_ptr不能循环引用
 ```
 class Observer; // 前向声明
+
 class Subject {
 private:
     std::vector<shared_ptr<Observer>> observers;
@@ -30,6 +32,7 @@ public:
     // 其它代码
     ..........
 };
+
 class Observer {
 private:
     shared_ptr<Subject> object;
@@ -38,8 +41,13 @@ public:
     // 其它代码
     ...........
 };
+
+// 有一个变量shared_ptr<Subject> p，此时，p指向的对象不仅通过该shared_ptr引用自己，  
+// 还通过它包含的Observer中的object成员变量引用回自己，于是它的引用计数是2，每个Observer的引用计数都是1。  
+// 当p析构时，它的引用计数减1，变成2-1=1（大于0!），p指向对象的析构函数将不会被调用，  
+// 于是p和它包含的每个Observer对象在程序结束时依然驻留在内存中没被delete，形成内存泄漏。 
 ```
-有一个变量shared_ptr<Subject> p，此时，p指向的对象不仅通过该shared_ptr引用自己，还通过它包含的Observer中的object成员变量引用回自己，于是它的引用计数是2，每个Observer的引用计数都是1。当p析构时，它的引用计数减1，变成2-1=1（大于0!），p指向对象的析构函数将不会被调用，于是p和它包含的每个Observer对象在程序结束时依然驻留在内存中没被delete，形成内存泄漏。 
+
 
 
 ### 多个无关的shared_ptr管理同一裸指针
@@ -56,6 +64,7 @@ public:
         return std::shared_ptr<A>(this);
     }
 };
+
 int main() {
     std::shared_ptr<A> pa = std::make_shared<A>();
     std::shared_ptr<A> pbad = pa->getShared();
@@ -64,6 +73,7 @@ int main() {
 ```
 上述代码的问题是同样的。 
 标准库提供了一种特殊的接口，来解决"生成this指针的shared_ptr"的问题：enable_shared_from_this    
+
 
 ### std::decay<T>::type and std::forward<T>
 ```
