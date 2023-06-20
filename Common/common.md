@@ -1,4 +1,11 @@
 ### Ownership and access right:
+
+#### kill process
+```
+# kill all python process
+ps -ef | grep "python" | awk '{print $2}' | xargs sudo kill
+```
+
 #### access right:
 ```
 sudo chmod 755 folder
