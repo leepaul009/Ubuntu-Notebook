@@ -73,6 +73,17 @@ git stash drop stash@{n}  # drop specific stash - see git stash list
 # it merge all commits after {commit_hash} to one commit
 git reset --soft {commit_hash}
 
-# 
+
+# take commit(with hash) of other branch into current branch
 git cherry-pick {commit_hash}
+# before:
+    a - b - c - d   Main
+         \
+           e - f - g Featur
+git checkout main
+git cherry-pick f
+# after:
+    a - b - c - d - f   Main
+         \
+           e - f - g Feature
 ```
