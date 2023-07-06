@@ -57,4 +57,13 @@ git stash drop stash@{n}  # drop specific stash - see git stash list
 
 
 git diff branch1:path/to/file branch2:path/to/file
+
+```
+
+
+### Edit commits
+```
+# make all changes after {commit_hash} to uncommitted local changes
+# it merge all commits after {commit_hash} to one commit
+git reset --soft {commit_hash}
 ```
