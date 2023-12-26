@@ -1,4 +1,7 @@
-
+下载easyconnect：
+```
+https://vpn.suda.edu.cn/portal/#!/login
+```
 启动 easyconnect,报错：
 ```
 # EasyConnect 在 ubuntu 下安装在此位置
