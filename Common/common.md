@@ -63,6 +63,14 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 # change theme by editing file ~/.zshrc
 ZSH_THEME="ys"
+
+# Q&A
+# 1) zsh: command not found: ???
+vim ~/.zshrc
+# type follwoing codes under "#User configuration"
+source ~/.bash_profile
+# or
+source ~/.profile
 ```
 
 ### strongth SSH connection:
