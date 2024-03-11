@@ -49,8 +49,13 @@ ln -s /source /link
 
 ### install ohmyz https://ohmyz.sh/#install (auto-suggestion function for terminal)
 ```
+# first, install zsh
+sudo apt install zsh
+
 # (need to install zsh before following steps) install:
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# old:sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # install auto-suggestion function:
 # details in https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
