@@ -59,6 +59,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # install auto-suggestion function:
 # details in https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# plugins=(git zsh-autosuggestions)
+
 # change theme by editing file ~/.zshrc
 ZSH_THEME="ys"
 ```
