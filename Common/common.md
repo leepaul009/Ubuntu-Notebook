@@ -142,3 +142,26 @@ sudo smbpasswd -a lqurszh
 # sudo service smbd restart
 sudo systemctl restart smbd.service nmbd.service
 ```
+
+### 安装搜狗输入法
+```
+sudo apt update
+# 安装输入法系统：
+sudo apt-get install fcitx
+# 设置
+ # 设置减速输入法系统为 fcitx
+ # 添加或删除语言：添加 中文简体，英文
+ # 应用到整个系统，重启
+# 设置fcitx开机自启动
+sudo cp /usr/share/applications/fcitx.desktop /etc/xdg/autostart
+# 卸载ibus输入法系统
+sudo apt purge ibus
+# 下载安装搜狗输入法
+sudo dpkg -i sogoupinyin_4.2.1.145_amd64.deb
+# 安装依赖
+sudo apt install libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2 libgsettings-qt1
+# 重启
+sudo reboot
+# 右上角的语音button，进入pannel；点击左下角+号添加搜狗输入法；调整优先级
+# 使用快捷键 Ctrl + Space 或 Shift 切换
+```
