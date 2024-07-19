@@ -77,6 +77,18 @@ source ~/.bash_profile
 # or
 source ~/.profile
 ```
+### Ohmyz Manual Installation
+```
+# 1. Clone The Repository
+git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+# 2. Optionally, Backup Your Existing ~/.zshrc File
+cp ~/.zshrc ~/.zshrc.orig
+# 3. Create A New Zsh Configuration File
+# You can create a new zsh config file by copying the template that we have included for you.
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+# 4. Change Your Default Shell
+chsh -s $(which zsh)
+```
 
 ### strongth SSH connection:
 ```
