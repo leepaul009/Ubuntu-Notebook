@@ -64,6 +64,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # change theme by editing file ~/.zshrc
 ZSH_THEME="ys"
 
+# 转到zsh，服务器需重新ssh：
+chsh -s $(which zsh)
+# 恢复到正常的shell：
+chsh -s /bin/bash
+
 # Q&A
 # 1) zsh: command not found: ???
 vim ~/.zshrc
